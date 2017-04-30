@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">蓝牙控</string>
+    <string name="searchpair_button">搜索配对</string>
+    <string name="Null">Null</string>
+    <string name="explain_textView">说明：\n 如果以下列表中有要连接的蓝牙设备，请点击连接\n如果没有，请点击\"搜索配对\"按钮</string>
+    <string name="send_button">发送</string>
+    <string name="nonsupport_bluetooth">该设备不支持蓝牙</string>
+    <string name="connecting_device">正在连接设备中...</string>
+    <string name="socket_init_failure">Socket初始化失败</string>
+    <string name="socket_close_failure">Socket无法连接并且关闭失败</string>
+    <string name="socket_connect_failure">Socket连接失败</string>
+    <string name="socket_connect_success">Socket连接成功</string>
+    <string name="sended">已发送</string>
+
+</resources>

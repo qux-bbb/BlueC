@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Blue Control</string>
+    <string name="searchpair_button">Search&amp;Pair</string>
+    <string name="Null">Null</string>
+    <string name="explain_textView">Note: \n If the Bluetooth device you want to be connected is in the following list, please click the device to connect. \n If there is not, please click the "Search&amp;Pair" button</string>
+    <string name="send_button">Send</string>
+    <string name="nonsupport_bluetooth">The device does not support Bluetooth</string>
+    <string name="connecting_device">Device connecting...</string>
+    <string name="socket_init_failure">Socket init failure</string>
+    <string name="socket_close_failure">Socket connect &amp; close failure</string>
+    <string name="socket_connect_failure">Socket connect failure</string>
+    <string name="socket_connect_success">Socket connect success</string>
+    <string name="sended">Sended</string>
+
+</resources>
