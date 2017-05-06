@@ -14,18 +14,12 @@
         android:layout_height="0dp"
         android:layout_weight="5">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/info_textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/info_textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:paddingTop="10dp"/>
-        </LinearLayout>
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"/>
     </ScrollView>
 
 

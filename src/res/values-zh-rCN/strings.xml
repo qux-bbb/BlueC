@@ -12,5 +12,8 @@
     <string name="socket_connect_failure">Socket连接失败</string>
     <string name="socket_connect_success">Socket连接成功</string>
     <string name="sended">已发送</string>
+    <string name="opening_blue">蓝牙打开中...</string>
+    <string name="open_blue_success">蓝牙打开成功</string>
+    <string name="open_blue_failure">蓝牙打开失败</string>
 
 </resources>

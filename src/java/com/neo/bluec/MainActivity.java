@@ -1,8 +1,10 @@
 package com.neo.bluec;
 
+import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.SystemClock;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
@@ -52,9 +54,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, R.string.nonsupport_bluetooth, Toast.LENGTH_LONG).show();
             finish();
         }else{
-            bluetoothAdapter.enable();
-            //蓝牙开启需要时间，在蓝牙开启之后才能获取已配对设备，所以先sleep一秒，不然会没有已配对设备信息
-            SystemClock.sleep(1000);
+            new OpenBlueTask().execute();
         }
 
 
@@ -124,5 +124,49 @@ public class MainActivity extends AppCompatActivity {
             pairedListview.setAdapter(pairedArrayAdapter);
         }
     }
+
+
+    // 打开蓝牙的AsyncTask
+    private class OpenBlueTask extends AsyncTask<String, String, String> {
+
+        // 等待提示框
+        ProgressDialog waitDialog = new ProgressDialog(MainActivity.this);
+
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            waitDialog.setMessage(getString(R.string.opening_blue));
+            waitDialog.setCancelable(false);
+            waitDialog.show();
+
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+            bluetoothAdapter.enable();
+            // 休眠3秒，等待蓝牙开启
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            waitDialog.dismiss();
+            if(bluetoothAdapter.isEnabled()){
+                Toast.makeText(MainActivity.this, R.string.open_blue_success, Toast.LENGTH_SHORT).show();
+                // 显示已配对设备
+                showPairedDevices();
+            }else{
+                Toast.makeText(MainActivity.this, R.string.open_blue_failure, Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
 
 }
